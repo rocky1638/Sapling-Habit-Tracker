@@ -1,13 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { connect } from 'react-redux';
-import { fetchUser } from '../actions';
 
 class Home extends Component {
-  componentDidMount() {
-    this.props.fetchUser();
-  }
-
   render() {
     return (
       <div className="container-fluid">
@@ -96,4 +90,4 @@ class Home extends Component {
   }
 }
 
-export default connect(null, { fetchUser })(Home);
+export default Home;

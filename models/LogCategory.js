@@ -1,17 +1,18 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const UserSchema = new Schema(
+const LogCategorySchema = new Schema(
   {
-    googleId: String,
-    logs: [
+    category: String,
+    goal: String,
+    childrenLogs: [
       {
         type: Schema.Types.ObjectId,
-        ref: 'log-category'
+        ref: 'log'
       }
     ]
   },
   { usePushEach: true }
 );
 
-mongoose.model('user', UserSchema);
+mongoose.model('log-category', LogSchema);

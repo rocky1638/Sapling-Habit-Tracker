@@ -48,6 +48,29 @@ body {
   /* -webkit-transform: scale(1.1); */
 }
 
+.nav-button {
+  color: #eeeeee;
+  font-size: 18px;
+
+  transition: 0.4s;
+  -webkit-transition: 0.4s;
+}
+
+.nav-button:hover,
+.nav-button:focus {
+  font-size: 18px;
+  font-weight: bold;
+
+  background-color: #eeeeee !important;
+  color: #8bc34a;
+
+  border: 1px solid #fffeff;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  /* 
+  transform: scale(1.05); */
+}
+
 .navbar-toggle {
   border: 1px solid #eeeeee;
 }
@@ -103,6 +126,19 @@ body {
   background: #e74b37;
 }
 
+.submit-button {
+  padding: 5px 20px 5px 20px;
+}
+
+/** FORMS **/
+.form-control:focus {
+  border-color: #9ccc65;
+}
+
+.form-control-error {
+  border-color: #f44336;
+}
+
 /** IMAGES **/
 .landing-icon {
   width: 80px;
@@ -116,6 +152,26 @@ body {
 .h1 {
   font-size: 36px;
   font-weight: 400;
+}
+
+.h2 {
+  font-size: 32px;
+}
+
+.h3 {
+  font-size: 28px;
+}
+
+.h4 {
+  font-size: 24px;
+}
+
+.h5 {
+  font-size: 20px;
+}
+
+.h6 {
+  font-size: 16px;
 }
 
 .weight-200 {

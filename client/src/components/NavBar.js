@@ -1,8 +1,36 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { fetchUser } from '../actions';
 
 class NavBar extends Component {
+  componentDidMount() {
+    this.props.fetchUser();
+  }
+
+  renderLogo() {
+    switch (this.props.user) {
+      case null:
+        return (
+          <a className="navbar-brand" href="/">
+            Sapling
+          </a>
+        );
+      case false:
+        return (
+          <a className="navbar-brand" href="/">
+            Sapling
+          </a>
+        );
+      default:
+        return (
+          <a className="navbar-brand" href="/dashboard">
+            Sapling
+          </a>
+        );
+    }
+  }
+
   renderNavLinks() {
     console.log(this.props.user);
     switch (this.props.user) {
@@ -18,6 +46,11 @@ class NavBar extends Component {
         );
       default:
         return [
+          <li key="3">
+            <Link className="nav-button" to="/new_practice">
+              Start a Practice
+            </Link>
+          </li>,
           <li key="1">
             <Link className="nav-link" to="/logs">
               My Logs
@@ -47,9 +80,7 @@ class NavBar extends Component {
               <span className="icon-bar" />
               <span className="icon-bar" />
             </button>
-            <a className="navbar-brand" href="#">
-              Sapling
-            </a>
+            {this.renderLogo()}
           </div>
           <div className="collapse navbar-collapse" id="myNavbar">
             <ul className="nav navbar-nav" />
@@ -69,4 +100,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(NavBar);
+export default connect(mapStateToProps, { fetchUser })(NavBar);
