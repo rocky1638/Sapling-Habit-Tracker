@@ -66,7 +66,7 @@ class NewPractice extends Component {
                 component={this.renderTextArea}
               />
               <button
-                className="h6 weight-300 sans-serif submit-button"
+                className="h5 weight-400 sans-serif submit-button"
                 type="submit"
               >
                 Submit

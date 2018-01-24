@@ -48,7 +48,7 @@ class NavBar extends Component {
         return [
           <li key="3">
             <Link className="nav-button" to="/new_practice">
-              Start a Practice
+              Start Practicing
             </Link>
           </li>,
           <li key="1">
