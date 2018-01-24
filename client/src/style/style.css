@@ -4,7 +4,7 @@ body {
 
 /** NAVBAR **/
 .navbar {
-  background-color: #2196f3;
+  background-color: #8bc34a;
 
   min-height: 85px;
   padding-top: 15px;
@@ -41,7 +41,7 @@ body {
 
 .nav-link:hover,
 .nav-link:focus {
-  background-color: #2196f3 !important;
+  background-color: #8bc34a !important;
   color: #eeeeee;
 
   border-bottom: 1px solid #eeeeee;

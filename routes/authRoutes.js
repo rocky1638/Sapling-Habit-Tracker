@@ -20,5 +20,8 @@ module.exports = app => {
     res.send(req.user);
   });
 
-  // add logout route
+  app.get('/api/logout', (req, res) => {
+    req.logout();
+    res.redirect('/');
+  });
 };

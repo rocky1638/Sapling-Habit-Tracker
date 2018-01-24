@@ -1,6 +1,37 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 class NavBar extends Component {
+  renderNavLinks() {
+    console.log(this.props.user);
+    switch (this.props.user) {
+      case null:
+        return;
+      case false:
+        return (
+          <li>
+            <a className="nav-link" href="/auth/google">
+              Sign Up
+            </a>
+          </li>
+        );
+      default:
+        return [
+          <li key="1">
+            <Link className="nav-link" to="/logs">
+              My Logs
+            </Link>
+          </li>,
+          <li key="2">
+            <a className="nav-link" href="/api/logout">
+              Logout
+            </a>
+          </li>
+        ];
+    }
+  }
+
   render() {
     return (
       <nav className="navbar sans-serif">
@@ -23,16 +54,7 @@ class NavBar extends Component {
           <div className="collapse navbar-collapse" id="myNavbar">
             <ul className="nav navbar-nav" />
             <ul className="nav navbar-nav navbar-right nav-style">
-              <li>
-                <a className="nav-link" href="#">
-                  My Logs
-                </a>
-              </li>
-              <li>
-                <a className="nav-link" href="#">
-                  Logout
-                </a>
-              </li>
+              {this.renderNavLinks()}
             </ul>
           </div>
         </div>
@@ -41,4 +63,10 @@ class NavBar extends Component {
   }
 }
 
-export default NavBar;
+function mapStateToProps(state) {
+  return {
+    user: state.auth
+  };
+}
+
+export default connect(mapStateToProps)(NavBar);
