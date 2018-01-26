@@ -15,4 +15,4 @@ const LogCategorySchema = new Schema(
   { usePushEach: true }
 );
 
-mongoose.model('log-category', LogSchema);
+mongoose.model('log-category', LogCategorySchema);

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
+import { addPractice } from '../actions';
+import { connect } from 'react-redux';
 
 class NewPractice extends Component {
   renderField(field) {
@@ -38,7 +40,9 @@ class NewPractice extends Component {
   }
 
   onSubmit(values) {
-    console.log(values);
+    this.props.addPractice(values, () => {
+      this.props.history.push('/logs');
+    });
   }
 
   render() {
@@ -96,4 +100,4 @@ function validate(values) {
 export default reduxForm({
   validate,
   form: 'NewPracticeForm'
-})(NewPractice);
+})(connect(null, { addPractice })(NewPractice));

@@ -1,8 +1,7 @@
 {
   "name": "practice_tracker",
   "version": "1.0.0",
-  "description":
-    "Small web app to help users track their practice times and document their progress.",
+  "description": "Small web app to help users track their practice times and document their progress.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,13 +9,13 @@
     "server": "nodemon index.js",
     "client": "npm run start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild":
-      "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "author": "Rock Zhou",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.17.1",
+    "body-parser": "^1.18.2",
     "bootstrap": "^3.3.7",
     "concurrently": "^3.5.1",
     "cookie-session": "^2.0.0-beta.3",
