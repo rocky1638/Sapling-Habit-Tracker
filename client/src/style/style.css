@@ -271,6 +271,12 @@ body {
   font-weight: 400;
 }
 
+.no-link,
+.no-link:hover {
+  text-decoration: none;
+  color: black;
+}
+
 /******************************************* COLORS *******************************************/
 .green {
   color: #9ccc65;

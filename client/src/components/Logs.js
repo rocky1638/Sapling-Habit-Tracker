@@ -4,20 +4,27 @@ import { Link } from 'react-router-dom';
 import { fetchPractices } from '../actions';
 
 class Logs extends Component {
+  // constructor(props) {
+  //   super(props);
+  //
+  //   //  this.onCardClick.bind(this);
+  // }
+
   componentDidMount() {
     this.props.fetchPractices();
-    console.log('logs', this.props.logs);
   }
 
   renderPracticeCards() {
     return this.props.logs.map((log, index) => {
       return (
-        <div key={index} className="category-card sans-serif">
-          <h3>{log.category}</h3>
-          <h4>
-            <i>{log.goal}</i>
-          </h4>
-        </div>
+        <Link key={index} className="no-link" to={`/logs/${log._id}`}>
+          <div className="category-card sans-serif">
+            <h3>{log.category}</h3>
+            <h4>
+              <i>{log.goal}</i>
+            </h4>
+          </div>
+        </Link>
       );
     });
   }

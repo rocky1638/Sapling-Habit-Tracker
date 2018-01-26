@@ -4,7 +4,9 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Home from './Home';
 import Dashboard from './Dashboard';
 import NewPractice from './NewPractice';
+import NewLog from './NewLog';
 import Logs from './Logs';
+import SpecificLog from './SpecificLog';
 import NavBar from './NavBar';
 
 class App extends Component {
@@ -13,11 +15,15 @@ class App extends Component {
       <BrowserRouter>
         <div>
           <NavBar />
-          <Route path="/dashboard" component={Dashboard} />
-          <Route path="/new_practice" component={NewPractice} />
-          <Route path="/logs" component={Logs} />
-          <Route exact path="/" component={Home} />
-          <Route exact path="/#" component={Home} /> {/*DO I NEED THIS*/}
+          <Switch>
+            <Route path="/dashboard" component={Dashboard} />
+            <Route path="/new_practice" component={NewPractice} />
+            <Route path="/new_log" component={NewLog} />
+            <Route path="/logs/:id" component={SpecificLog} />
+            <Route exact path="/logs" component={Logs} />
+            <Route exact path="/" component={Home} />
+            <Route exact path="/#" component={Home} /> {/*DO I NEED THIS*/}
+          </Switch>
         </div>
       </BrowserRouter>
     );
