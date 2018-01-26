@@ -13,19 +13,19 @@ class NavBar extends Component {
       case null:
         return (
           <a className="navbar-brand" href="/">
-            Sapling
+            <img className="logo" src="/assets/logo.png" alt="Sapling Logo" />
           </a>
         );
       case false:
         return (
           <a className="navbar-brand" href="/">
-            Sapling
+            <img className="logo" src="/assets/logo.png" alt="Sapling Logo" />
           </a>
         );
       default:
         return (
           <a className="navbar-brand" href="/dashboard">
-            Sapling
+            <img className="logo" src="/assets/logo.png" alt="Sapling Logo" />
           </a>
         );
     }
@@ -39,7 +39,11 @@ class NavBar extends Component {
       case false:
         return (
           <li>
-            <a className="nav-link" href="/auth/google">
+            <a
+              style={{ marginTop: '10px' }}
+              className="nav-link"
+              href="/auth/google"
+            >
               Sign Up
             </a>
           </li>
@@ -47,17 +51,25 @@ class NavBar extends Component {
       default:
         return [
           <li key="3">
-            <Link className="nav-button" to="/new_practice">
+            <Link
+              style={{ marginTop: '10px' }}
+              className="nav-button"
+              to="/new_practice"
+            >
               Start Practicing
             </Link>
           </li>,
           <li key="1">
-            <Link className="nav-link" to="/logs">
+            <Link style={{ marginTop: '10px' }} className="nav-link" to="/logs">
               My Logs
             </Link>
           </li>,
           <li key="2">
-            <a className="nav-link" href="/api/logout">
+            <a
+              style={{ marginTop: '10px' }}
+              className="nav-link"
+              href="/api/logout"
+            >
               Logout
             </a>
           </li>
@@ -69,9 +81,10 @@ class NavBar extends Component {
     return (
       <nav className="navbar sans-serif">
         <div className="container-fluid">
-          <div className="navbar-header">
+          <div style={{ height: '70px' }} className="navbar-header">
             <button
               type="button"
+              style={{ marginTop: '20px' }}
               className="navbar-toggle"
               data-toggle="collapse"
               data-target="#myNavbar"
