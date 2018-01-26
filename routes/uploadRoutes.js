@@ -13,14 +13,16 @@ module.exports = app => {
       childrenLogs: []
     });
 
-    User.findById(req.user.id)
-      .then(user => {
-        user.logs.push(logCategory);
-        user.save();
-      })
-      .then(() => logCategory.save())
-      .then(logCategory => {
-        res.send(logCategory);
+    let updatedUser = req.user;
+
+    updatedUser.logs.push(logCategory);
+
+    logCategory
+      .save()
+      .then(() => User.findByIdAndUpdate(req.user._id, updatedUser))
+      .then(() => LogCategory.findById(logCategory.id))
+      .then(log => {
+        res.send(log);
       });
   });
 };

@@ -5,12 +5,13 @@ import { fetchPractices } from '../actions';
 class Logs extends Component {
   componentDidMount() {
     this.props.fetchPractices();
+    console.log('logs', this.props.logs);
   }
 
   renderPracticeCards() {
-    return this.props.logs.map(log => {
+    return this.props.logs.map((log, index) => {
       return (
-        <div className="category-card sans-serif">
+        <div key={index} className="category-card sans-serif">
           <h3>{log.category}</h3>
           <h4>
             <i>{log.goal}</i>
