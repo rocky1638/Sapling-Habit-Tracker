@@ -10,6 +10,7 @@ const LogSchema = new Schema(
   { usePushEach: true }
 );
 
+// could be a trouble spot
 LogSchema.pre('save', function preSave(next) {
   var log = this;
 

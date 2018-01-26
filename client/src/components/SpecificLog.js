@@ -33,7 +33,7 @@ class SpecificLog extends Component {
       );
     }
 
-    if (this.state.log.childrenLogs.length == 0) {
+    if (this.state.log.childrenLogs.length === 0) {
       return (
         <div className="container-fluid">
           <div className="row">

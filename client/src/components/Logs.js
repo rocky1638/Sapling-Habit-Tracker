@@ -34,7 +34,7 @@ class Logs extends Component {
       return <div>Loading...</div>;
     }
 
-    if (this.props.logs.length == 0) {
+    if (this.props.logs.length === 0) {
       return (
         <div className="container-fluid">
           <div className="row">

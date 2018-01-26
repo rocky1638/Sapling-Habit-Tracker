@@ -30,7 +30,7 @@ passport.use(
         } else {
           new User({ googleId: profile.id, logs: [] })
             .save()
-            .then(() => done(null, user));
+            .then(user => done(null, user));
         }
       });
     }
