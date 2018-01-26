@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { fetchPractices } from '../actions';
 
 class Logs extends Component {
@@ -22,8 +23,34 @@ class Logs extends Component {
   }
 
   render() {
-    if (!this.props.logs[0]) {
+    if (this.props.logs === null) {
       return <div>Loading...</div>;
+    }
+
+    if (this.props.logs.length == 0) {
+      return (
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col-xs-12 col-sm-10 col-sm-offset-1">
+              <h2 className="h2 sans-serif">Currently Practicing:</h2>
+              <p
+                style={{ marginBottom: '20px' }}
+                className="sans-serif h6 weight-300"
+              >
+                <i>No practices yet...</i>
+              </p>
+              <button
+                className="sans-serif h5 submit-button"
+                onClick={() => {
+                  this.props.history.push('/new_practice');
+                }}
+              >
+                Add Practice
+              </button>
+            </div>
+          </div>
+        </div>
+      );
     }
 
     return (
@@ -32,6 +59,14 @@ class Logs extends Component {
           <div className="col-xs-12 col-sm-10 col-sm-offset-1">
             <h2 className="h2 sans-serif">Currently Practicing:</h2>
             {this.renderPracticeCards()}
+            <button
+              className="sans-serif h5 submit-button--long"
+              onClick={() => {
+                this.props.history.push('/new_practice');
+              }}
+            >
+              Add Practice Category
+            </button>
           </div>
         </div>
       </div>
