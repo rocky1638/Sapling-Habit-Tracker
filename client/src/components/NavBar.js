@@ -51,18 +51,22 @@ class NavBar extends Component {
       default:
         return [
           <li key="3">
-            <Link
-              style={{ marginTop: '10px' }}
-              className="nav-button"
-              to="/new_practice"
+            <a
+              style={{ marginTop: '10px', color: '#eeeeee', cursor: 'pointer' }}
+              className="sans-serif no-link nav-button"
+              href="/new_practice"
             >
               Start Practicing
-            </Link>
+            </a>
           </li>,
           <li key="1">
-            <Link style={{ marginTop: '10px' }} className="nav-link" to="/logs">
+            <a
+              style={{ marginTop: '10px', color: '#eeeeee', cursor: 'pointer' }}
+              className="no-link nav-link"
+              href="/logs"
+            >
               My Logs
-            </Link>
+            </a>
           </li>,
           <li key="2">
             <a

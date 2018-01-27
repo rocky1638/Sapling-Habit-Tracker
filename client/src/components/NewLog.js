@@ -27,12 +27,11 @@ class NewLog extends Component {
     const { _id } = this.props.log;
 
     this.props.addLog(values, _id, () => {
-      this.props.history.push('/dashboard');
+      this.props.history.push('/dashboard'); // change to /logs/:id and fix
     });
   }
 
   render() {
-    console.log(this.props.log);
     const { handleSubmit } = this.props;
 
     return (
@@ -42,6 +41,7 @@ class NewLog extends Component {
             <h3 className="h2 sans-serif weight-400">
               Another Day, Another Practice
             </h3>
+            <h4>To Do Next (From Last Practice): </h4>
             <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
               <Field
                 type="text"

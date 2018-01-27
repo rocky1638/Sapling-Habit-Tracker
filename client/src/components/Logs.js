@@ -39,7 +39,7 @@ class Logs extends Component {
         <div className="container-fluid">
           <div className="row">
             <div className="col-xs-12 col-sm-10 col-sm-offset-1">
-              <h2 className="h2 sans-serif">Currently Practicing:</h2>
+              <h2 className="h2 sans-serif">Active Practices: </h2>
               <p
                 style={{ marginBottom: '20px' }}
                 className="sans-serif h6 weight-300"

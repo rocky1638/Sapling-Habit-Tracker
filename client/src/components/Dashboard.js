@@ -5,7 +5,13 @@ import { Link } from 'react-router-dom';
 class Dashboard extends Component {
   renderButton() {
     if (!this.props.user.lastPracticed[0]) {
-      return;
+      return (
+        <Link to="/logs">
+          <button className="submit-button h5 sans-serif weight-400">
+            Start Practicing!
+          </button>
+        </Link>
+      );
     }
 
     return (
