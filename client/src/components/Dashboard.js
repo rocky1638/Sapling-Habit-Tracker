@@ -3,6 +3,19 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 class Dashboard extends Component {
+  renderButton() {
+    if (!this.props.user.lastPracticed[0]) {
+      return;
+    }
+
+    return (
+      <Link to={`/logs/${this.props.user.lastPracticed[0]._id}`}>
+        <button className="submit-button h5 sans-serif weight-400">
+          Practice Again!
+        </button>
+      </Link>
+    );
+  }
   render() {
     if (!this.props.user) {
       return <div>Loading...</div>;
@@ -24,11 +37,7 @@ class Dashboard extends Component {
                   <h2 className="h2 sans-serif weight-400">
                     <b>{lp}</b>
                   </h2>
-                  <Link to={`/logs/${this.props.user.lastPracticed[0]._id}`}>
-                    <button className="submit-button h5 sans-serif weight-400">
-                      Practice Again!
-                    </button>
-                  </Link>
+                  {this.renderButton()}
                 </div>
               </div>
             </div>
