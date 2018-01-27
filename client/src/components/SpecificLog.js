@@ -1,31 +1,35 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { fetchCategory } from '../actions';
 
 class SpecificLog extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      log: {}
-    };
-  }
   componentDidMount() {
-    console.log('hello');
     const { id } = this.props.match.params;
-    console.log('log.id: ', id);
 
-    axios
-      .get('/api/fetch_logs', {
-        params: {
-          id
-        }
-      })
-      .then(res => this.setState({ log: res.data }));
+    this.props.fetchCategory(id);
+  }
+
+  renderLogs() {
+    return this.props.log.childrenLogs.map((current, index) => {
+      var date = new Date(current.createdAt);
+      var d = date.getDate();
+      var m = date.getMonth();
+
+      return (
+        <div className="log-card">
+          <h4>
+            Date: {m},{d}
+          </h4>
+          <h4>{current.description}</h4>
+        </div>
+      );
+    });
   }
 
   render() {
-    if (!this.state.log.childrenLogs) {
+    if (!this.props.log.childrenLogs) {
       return (
         <div>
           <h3>Loading...</h3>
@@ -33,13 +37,13 @@ class SpecificLog extends Component {
       );
     }
 
-    if (this.state.log.childrenLogs.length === 0) {
+    if (this.props.log.childrenLogs.length === 0) {
       return (
         <div className="container-fluid">
           <div className="row">
             <div className="col-xs-12 col-sm-10 col-sm-offset-1">
               <h2 className="sans-serif h2 weight-400">
-                Practice Logs For: "{this.state.log.category}"
+                Practice Logs For: "{this.props.log.category}"
               </h2>
               <h4>
                 <i>No logs yet... Get practicing!</i>
@@ -58,8 +62,9 @@ class SpecificLog extends Component {
         <div className="row">
           <div className="col-xs-12 col-sm-10 col-sm-offset-1">
             <h2 className="sans-serif h2 weight-400">
-              Practice Logs For: "{this.state.log.category}"
+              Practice Logs For: "{this.props.log.category}"
             </h2>
+            {this.renderLogs()}
           </div>
         </div>
       </div>
@@ -67,4 +72,10 @@ class SpecificLog extends Component {
   }
 }
 
-export default SpecificLog;
+function mapStateToProps(state) {
+  return {
+    log: state.currentPractice
+  };
+}
+
+export default connect(mapStateToProps, { fetchCategory })(SpecificLog);

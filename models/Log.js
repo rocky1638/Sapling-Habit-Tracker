@@ -3,9 +3,9 @@ const Schema = mongoose.Schema;
 
 const LogSchema = new Schema(
   {
-    title: String,
     createdAt: Date,
-    description: String
+    description: String,
+    nextPractice: String
   },
   { usePushEach: true }
 );
@@ -14,7 +14,7 @@ const LogSchema = new Schema(
 LogSchema.pre('save', function preSave(next) {
   var log = this;
 
-  log.createdAt(Date.now());
+  log.createdAt = Date.now();
   next();
 });
 
