@@ -24,10 +24,7 @@ module.exports = app => {
   );
 
   app.get('/api/current_user', (req, res) => {
-    User.findById(req.user.id)
-      .populate('logs')
-      .populate('lastPracticed')
-      .then(user => res.send(user));
+    res.send(req.user);
   });
 
   app.get('/api/logout', (req, res) => {
