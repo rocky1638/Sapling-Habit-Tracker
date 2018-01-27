@@ -14,13 +14,12 @@ class SpecificLog extends Component {
   renderLogs() {
     return this.props.log.childrenLogs.map((current, index) => {
       var date = new Date(current.createdAt);
-      var d = date.getDate();
-      var m = date.getMonth();
+      var dateString = date.toDateString();
 
       return (
-        <div className="log-card">
-          <h4>
-            Date: {m},{d}
+        <div className="category-card">
+          <h4 className="h5 weight-400">
+            <b>{dateString}</b>
           </h4>
           <h4>{current.description}</h4>
         </div>
@@ -49,7 +48,9 @@ class SpecificLog extends Component {
                 <i>No logs yet... Get practicing!</i>
               </h4>
               <Link to="/new_log">
-                <button className="submit-button">Log Practice</button>
+                <button className="sans-serif submit-button">
+                  Log Practice
+                </button>
               </Link>
             </div>
           </div>
@@ -65,6 +66,11 @@ class SpecificLog extends Component {
               Practice Logs For: "{this.props.log.category}"
             </h2>
             {this.renderLogs()}
+            <Link to="/new_log">
+              <button className="sans-serif submit-button--long">
+                Log Practice
+              </button>
+            </Link>
           </div>
         </div>
       </div>

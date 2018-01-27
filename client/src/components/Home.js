@@ -75,7 +75,7 @@ class Home extends Component {
                 </div>
                 <div className="col-xs-8">
                   <h3 style={{ marginTop: '0px' }}>Realize Your Potential</h3>
-                  <h4 className="weight-200">
+                  <h4 style={{ paddingBottom: '30px' }} className="weight-200">
                     With consistent and deliberate practice, anyone can realize
                     their goals!
                   </h4>

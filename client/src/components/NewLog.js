@@ -74,6 +74,21 @@ function mapStateToProps(state) {
   };
 }
 
+function validate(values) {
+  const error = {};
+
+  if (!values.description) {
+    error.description = true;
+  }
+
+  if (!values.nextPractice) {
+    error.nextPractice = true;
+  }
+
+  return error;
+}
+
 export default reduxForm({
+  validate,
   form: 'NewLogForm'
 })(connect(mapStateToProps, { addLog })(NewLog));
