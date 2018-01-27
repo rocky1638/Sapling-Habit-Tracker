@@ -8,9 +8,10 @@ class Dashboard extends Component {
       return <div>Loading...</div>;
     }
 
-    const lp = this.props.user.lastPracticed[0]
-      ? this.props.user.lastPracticed[0].category
-      : 'N/A';
+    const lp =
+      this.props.user.lastPracticed[0] === undefined
+        ? this.props.user.lastPracticed[0].category
+        : 'N/A';
 
     return (
       <div className="container-fluid">
