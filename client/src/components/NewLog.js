@@ -32,6 +32,7 @@ class NewLog extends Component {
   }
 
   render() {
+    console.log(this.props.log);
     const { handleSubmit } = this.props;
 
     return (
@@ -57,7 +58,10 @@ class NewLog extends Component {
                 placeholder="What would you like to practice or improve for your next practice session?"
                 component={this.renderTextArea}
               />
-              <button type="submit" className="submit-button">
+              <button
+                type="submit"
+                className="h5 weight-400 sans-serif submit-button"
+              >
                 Submit
               </button>
             </form>

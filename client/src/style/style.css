@@ -210,6 +210,33 @@ body {
     0 4px 5px rgba(104, 159, 56, 0.24);
 }
 
+.box {
+  position: relative;
+  width: 100%;
+}
+
+.box:before {
+  content: '';
+  display: block;
+  padding-top: 100%;
+}
+
+.dashboard-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  margin-bottom: 5%;
+
+  background-color: #fff;
+  border-radius: 5px;
+
+  box-shadow: 0 2px 4px rgba(141, 110, 99, 0.12),
+    0 2px 3px rgba(141, 110, 99, 0.24);
+}
+
 /******************************************* FORMS *******************************************/
 .form-control:focus {
   border-color: #9ccc65;
@@ -269,6 +296,10 @@ body {
 
 .weight-400 {
   font-weight: 400;
+}
+
+.center {
+  text-align: center;
 }
 
 .no-link,

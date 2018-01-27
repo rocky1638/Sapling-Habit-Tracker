@@ -27,6 +27,27 @@ module.exports = app => {
       });
   });
 
+  // app.post('/api/add_log', (req, res) => {
+  //   const { description, nextPractice, id } = req.body;
+  //
+  //   const log = new Log({
+  //     description,
+  //     nextPractice
+  //   });
+  //
+  //   let updatedUser = req.user;
+  //
+  //   LogCategory.findById(id).then(lc => {
+  //     lc.childrenLogs.push(log);
+  //     log
+  //       .save()
+  //       .then(() => LogCategory.findByIdAndUpdate(id, lc))
+  //       .then(lc => {
+  //         res.send(lc);
+  //       });
+  //   });
+  // });
+
   app.post('/api/add_log', (req, res) => {
     const { description, nextPractice, id } = req.body;
 
@@ -35,10 +56,14 @@ module.exports = app => {
       nextPractice
     });
 
+    let updatedUser = req.user;
+
     LogCategory.findById(id).then(lc => {
       lc.childrenLogs.push(log);
+      updatedUser.lastPracticed.push(lc);
       log
         .save()
+        .then(() => User.findByIdAndUpdate(req.user.id, updatedUser))
         .then(() => LogCategory.findByIdAndUpdate(id, lc))
         .then(lc => {
           res.send(lc);

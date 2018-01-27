@@ -1,4 +1,7 @@
 const passport = require('passport');
+const mongoose = require('mongoose');
+
+const User = mongoose.model('user');
 
 module.exports = app => {
   app.get(
@@ -21,7 +24,10 @@ module.exports = app => {
   );
 
   app.get('/api/current_user', (req, res) => {
-    res.send(req.user);
+    User.findById(req.user.id)
+      .populate('logs')
+      .populate('lastPracticed')
+      .then(user => res.send(user));
   });
 
   app.get('/api/logout', (req, res) => {

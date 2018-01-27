@@ -67,7 +67,7 @@ class SpecificLog extends Component {
             </h2>
             {this.renderLogs()}
             <Link to="/new_log">
-              <button className="sans-serif submit-button--long">
+              <button className="h5 weight-400 sans-serif submit-button--long">
                 Log Practice
               </button>
             </Link>

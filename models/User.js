@@ -4,6 +4,12 @@ const Schema = mongoose.Schema;
 const UserSchema = new Schema(
   {
     googleId: String,
+    lastPracticed: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'log-category'
+      }
+    ],
     logs: [
       {
         type: Schema.Types.ObjectId,
