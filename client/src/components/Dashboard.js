@@ -8,6 +8,10 @@ class Dashboard extends Component {
       return <div>Loading...</div>;
     }
 
+    const lp = this.props.user.lastPracticed[0]
+      ? this.props.user.lastPracticed[0].category
+      : 'N/A';
+
     return (
       <div className="container-fluid">
         <div className="row">
@@ -17,7 +21,7 @@ class Dashboard extends Component {
                 <div style={{ paddingTop: '20%' }} className="dashboard-card">
                   <h2 className="h2 sans-serif weight-300">Last Practiced: </h2>
                   <h2 className="h2 sans-serif weight-400">
-                    <b>{this.props.user.lastPracticed[0].category}</b>
+                    <b>{lp}</b>
                   </h2>
                   <Link to={`/logs/${this.props.user.lastPracticed[0]._id}`}>
                     <button className="submit-button h5 sans-serif weight-400">
