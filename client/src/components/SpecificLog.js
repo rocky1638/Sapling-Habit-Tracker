@@ -48,7 +48,7 @@ class SpecificLog extends Component {
                 <i>No logs yet... Get practicing!</i>
               </h4>
               <Link to="/new_log">
-                <button className="sans-serif submit-button">
+                <button className="sans-serif h5 weight-400 submit-button">
                   Log Practice
                 </button>
               </Link>

@@ -4,12 +4,6 @@ import { Link } from 'react-router-dom';
 import { fetchPractices } from '../actions';
 
 class Logs extends Component {
-  // constructor(props) {
-  //   super(props);
-  //
-  //   //  this.onCardClick.bind(this);
-  // }
-
   componentDidMount() {
     this.props.fetchPractices();
   }

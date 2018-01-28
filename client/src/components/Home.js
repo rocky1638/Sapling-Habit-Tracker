@@ -26,6 +26,11 @@ class Home extends Component {
                       Login with Google
                     </button>
                   </a>
+                  <a href="/auth/facebook">
+                    <button className="loginBtn loginBtn--facebook">
+                      Login with Facebook
+                    </button>
+                  </a>
                 </div>
               </div>
             </div>

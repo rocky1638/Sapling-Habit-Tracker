@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 const UserSchema = new Schema(
   {
     googleId: String,
+    facebookId: String,
     lastPracticed: [
       {
         type: Schema.Types.ObjectId,
