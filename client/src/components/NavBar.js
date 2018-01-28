@@ -37,17 +37,7 @@ class NavBar extends Component {
       case null:
         return;
       case false:
-        return (
-          <li>
-            <a
-              style={{ marginTop: '10px' }}
-              className="nav-link"
-              href="/auth/google"
-            >
-              Sign Up
-            </a>
-          </li>
-        );
+        return;
       default:
         return [
           <li key="3">

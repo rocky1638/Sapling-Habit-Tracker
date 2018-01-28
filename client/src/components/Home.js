@@ -9,18 +9,15 @@ class Home extends Component {
             style={{ marginTop: '10%' }}
             className="col-xs-10 col-xs-offset-1"
           >
-            <div style={{ marginTop: '10%' }} className="col-xs-12 col-sm-6">
+            <div style={{ marginTop: '5%' }} className="col-xs-12 col-sm-6">
               <h1 className="weight-400 sans-serif">
                 Make the most of your practice.
               </h1>
               <div className="row">
-                <div
-                  style={{ paddingRight: '0px' }}
-                  className="col-xs-12 col-sm-5"
-                >
+                <div style={{ paddingRight: '0px' }} className="col-xs-12">
                   <h2 className="sans-serif weight-300">Sign up now:</h2>
                 </div>
-                <div className="col-xs-12 col-sm-7">
+                <div className="col-xs-12">
                   <a href="/auth/google">
                     <button className="loginBtn loginBtn--google">
                       Login with Google
