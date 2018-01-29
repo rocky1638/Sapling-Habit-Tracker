@@ -319,6 +319,10 @@ body {
   text-align: center;
 }
 
+.right {
+  float: right;
+}
+
 .no-link,
 .no-link:hover {
   text-decoration: none;
@@ -336,4 +340,8 @@ body {
 
 .brown {
   color: #8d6e63;
+}
+
+.grey {
+  color: #424242;
 }

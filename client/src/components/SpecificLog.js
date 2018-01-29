@@ -16,10 +16,15 @@ class SpecificLog extends Component {
       var date = new Date(current.createdAt);
       var dateString = date.toDateString();
 
+      var timeLogged = current.time
+        ? `${Math.floor(current.time / 60)} min`
+        : '';
+
       return (
-        <div className="category-card">
+        <div className="category-card sans-serif">
           <h4 className="h5 weight-400">
             <b>{dateString}</b>
+            <h4 className="right grey">{timeLogged}</h4>
           </h4>
           <h4>{current.description}</h4>
         </div>
