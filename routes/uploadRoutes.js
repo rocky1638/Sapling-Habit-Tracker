@@ -49,11 +49,12 @@ module.exports = app => {
   // });
 
   app.post('/api/add_log', (req, res) => {
-    const { description, nextPractice, id } = req.body;
+    const { description, nextPractice, time, id } = req.body;
 
     const log = new Log({
       description,
-      nextPractice
+      nextPractice,
+      time
     });
 
     let updatedUser = req.user;

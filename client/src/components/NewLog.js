@@ -24,6 +24,8 @@ class NewLog extends Component {
   }
 
   onSubmit(values) {
+    values.time = this.props.time;
+
     const { _id } = this.props.log;
 
     this.props.addLog(values, _id, () => {
@@ -74,7 +76,8 @@ class NewLog extends Component {
 
 function mapStateToProps(state) {
   return {
-    log: state.currentPractice
+    log: state.currentPractice,
+    time: state.time
   };
 }
 

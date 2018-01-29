@@ -5,7 +5,8 @@ const LogSchema = new Schema(
   {
     createdAt: Date,
     description: String,
-    nextPractice: String
+    nextPractice: String,
+    time: Number
   },
   { usePushEach: true }
 );

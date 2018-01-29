@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import Home from './Home';
 import Dashboard from './Dashboard';
+import PracticeTimer from './PracticeTimer';
 import NewPractice from './NewPractice';
 import NewLog from './NewLog';
 import Logs from './Logs';
@@ -18,6 +19,7 @@ class App extends Component {
           <Switch>
             <Route path="/dashboard" component={Dashboard} />
             <Route path="/new_practice" component={NewPractice} />
+            <Route path="/timer" component={PracticeTimer} />
             <Route path="/new_log" component={NewLog} />
             <Route path="/logs/:id" component={SpecificLog} />
             <Route exact path="/logs" component={Logs} />

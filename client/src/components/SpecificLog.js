@@ -47,9 +47,9 @@ class SpecificLog extends Component {
               <h4>
                 <i>No logs yet... Get practicing!</i>
               </h4>
-              <Link to="/new_log">
+              <Link to="/timer">
                 <button className="sans-serif h5 weight-400 submit-button">
-                  Log Practice
+                  Start a Practice Session
                 </button>
               </Link>
             </div>
@@ -66,9 +66,9 @@ class SpecificLog extends Component {
               Practice Logs For: "{this.props.log.category}"
             </h2>
             {this.renderLogs()}
-            <Link to="/new_log">
+            <Link to="/timer">
               <button className="h5 weight-400 sans-serif submit-button--long">
-                Log Practice
+                Start a Practice Session
               </button>
             </Link>
           </div>

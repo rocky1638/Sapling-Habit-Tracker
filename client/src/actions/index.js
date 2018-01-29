@@ -4,7 +4,8 @@ import {
   ADD_PRACTICE,
   FETCH_PRACTICES,
   ADD_LOG,
-  FETCH_CATEGORY
+  FETCH_CATEGORY,
+  UPDATE_TIME
 } from './types';
 
 export const fetchUser = () => dispatch => {
@@ -44,4 +45,9 @@ export const addLog = (values, id, callback) => dispatch => {
     callback();
     return dispatch({ type: ADD_LOG, payload: res.data });
   });
+};
+
+export const updateTime = (time, callback) => dispatch => {
+  callback();
+  return dispatch({ type: UPDATE_TIME, payload: time });
 };
