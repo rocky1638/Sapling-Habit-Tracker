@@ -24,7 +24,7 @@ class SpecificLog extends Component {
         <div className="category-card sans-serif">
           <h4 className="h5 weight-400">
             <b>{dateString}</b>
-            <h4 className="right grey">{timeLogged}</h4>
+            <span className="right grey">{timeLogged}</span>
           </h4>
           <h4>{current.description}</h4>
         </div>
