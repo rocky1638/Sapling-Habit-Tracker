@@ -69,9 +69,9 @@ class PracticeTimer extends Component {
         <div className="container-fluid">
           <div className="row">
             <div className="col-xs-12 col-sm-10 col-sm-offset-1 center">
-              <h1 className="sans-serif h1 weight-400">
+              <h2 className="sans-serif h2 weight-400">
                 Practicing: "{this.props.log.category}"
-              </h1>
+              </h2>
               <h2 className="sans-serif h2 weight-300">
                 {minutes}:
                 {seconds < 10 ? `0${seconds}` : seconds}
